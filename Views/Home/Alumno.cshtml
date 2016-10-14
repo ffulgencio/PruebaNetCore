@@ -1,0 +1,48 @@
+@model EFCOREDEMO.Models.Alumno
+
+@{
+    ViewData["Title"] = "Alumno";
+}
+<h2>@ViewData["Title"].</h2>
+<h3>@ViewData["Message"]</h3>
+@using(Html.BeginForm()){
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Registro de Alumnos</legend>
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Nombre)
+        </div>
+         <div class="editor-field">
+            @Html.EditorFor(model => model.Nombre)
+        </div>
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Apellido)
+        </div>
+         <div class="editor-field">
+            @Html.EditorFor(model => model.Apellido)
+        </div>
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Cedula)
+        </div>
+         <div class="editor-field">
+            @Html.EditorFor(model => model.Cedula)
+        </div>
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Telefono)
+        </div>
+         <div class="editor-field">
+            @Html.EditorFor(model => model.Telefono)
+        </div>
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Email)
+        </div>
+         <div class="editor-field">
+            @Html.EditorFor(model => model.Email)
+        </div>
+        <input type="submit" value ="Enviar" />
+
+    </fieldset>
+}
+<p>Use this area to provide additional information.</p>
