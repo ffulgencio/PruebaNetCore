@@ -5,7 +5,7 @@
 }
 <h2>@ViewData["Title"].</h2>
 <h3>@ViewData["Message"]</h3>
-@using(Html.BeginForm()){
+@using(Html.BeginForm("GuardarAlumno","Home",FormMethod.Post)){
     @Html.AntiForgeryToken()
     @Html.ValidationSummary(true)
 
