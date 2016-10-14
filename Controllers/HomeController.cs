@@ -1,13 +1,14 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using EFCOREDEMO;
+using EFCOREDEMO.Models;
 using Microsoft.AspNetCore.Mvc;
 
 namespace EfCoreDemo.Controllers
 {
+
     public class HomeController : Controller
     {
+        private AppDBContext db = new AppDBContext();
+        
         public IActionResult Index()
         {
             return View();
@@ -35,6 +36,13 @@ namespace EfCoreDemo.Controllers
         public IActionResult Error()
         {
             return View();
+        }
+
+        public IActionResult GuardarAlumno(Alumno Alumno){
+            db.Alumnos.Add(Alumno);
+            db.SaveChanges();
+            return RedirectToAction("Alumno");
+
         }
     }
 }
