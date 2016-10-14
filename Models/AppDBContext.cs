@@ -30,6 +30,7 @@ namespace  EFCOREDEMO{
                 .HasOne(pt => pt.Curso)
                 .WithMany(t => t.AlumnosCursos)
                 .HasForeignKey(pt => pt.CursoId);
+            
         }
     }
 }
